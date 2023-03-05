@@ -30,7 +30,7 @@ Referring to: https://www.youtube.com/watch?v=de_fomBbLmM
     - Step 2: Run: `forge install OpenZeppelin/openzeppelin-contracts` - It will not install if you have not committed the code up till now before installing. This could be because they are going to add OZ as a git submodule. - In the `lib` folder.
     - Step 3: Configure remappings: To tell local environment where to find OZ code, once we try to import and use it.
         - Run: `forge remappings`. Here you can see foundry making some assumptions for our environment:
-            ----- PUT SS HERE -----
+            <img width="593" alt="Screenshot 2023-03-05 at 8 11 02 PM" src="https://user-images.githubusercontent.com/71545386/222968563-756a2b8c-7fcc-4adf-afc2-f6f97711c294.png">
         - But we will create custom remappings. For that create a file called `remappings.txt` in the folder and put this in there: `@openzeppelin/=lib/openzeppelin-contracts/`. NOTE: This looks like remappings wile using solc. Maybe this is what is happening under the hood.
     - Step 4: Create a simple ERC721 contract in the `src` folder. 
     - Step 5: Now, you can use OZ as you would in any hardhat project.
