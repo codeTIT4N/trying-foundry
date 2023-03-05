@@ -2,9 +2,11 @@
 
 Just trying out foundry.
 
+Referring to: https://www.youtube.com/watch?v=de_fomBbLmM
+
 ## Notes:
 - It is extremely fast.
-- Tests are written in solidity, and can be run using `forge test`
+- Tests are written in solidity, and can be run using `forge test`. To run a specific test file: `forge test --match-contract <Contract Name>`
 - Test files will end in `.t.sol` and are present inside the `test` folder.
 - Test cases natively support fuzzing and we don't have to pass fuzzing inputs, they are auto generated.
 - Logging can be done using `emit log()`.
@@ -23,4 +25,15 @@ Just trying out foundry.
     - Step 5: Call `greet()` using cast: `cast call $CONTRACT_ADDRESS "greet()(string)"`
     - Step 6: Performing transactions using cast: `cast send $CONTRACT_ADDRESS "updateGreeting(string)" "Hey" --private-key $PRIVATE_KEY`
     - Step 7; Read greeting again to check if it changed: Same as Step 5
-- Using OpenZeppelin contracts: `forge install OpenZeppelin/openzeppelin-contracts` - It will not install if you have not committed the code up till now before installing. This could be because they are going to add OZ as a git submodule.
+- Using OpenZeppelin contracts: 
+    - Step 1: Commit code up till now.
+    - Step 2: Run: `forge install OpenZeppelin/openzeppelin-contracts` - It will not install if you have not committed the code up till now before installing. This could be because they are going to add OZ as a git submodule. - In the `lib` folder.
+    - Step 3: Configure remappings: To tell local environment where to find OZ code, once we try to import and use it.
+        - Run: `forge remappings`. Here you can see foundry making some assumptions for our environment:
+            ----- PUT SS HERE -----
+        - But we will create custom remappings. For that create a file called `remappings.txt` in the folder and put this in there: `@openzeppelin/=lib/openzeppelin-contracts/`. NOTE: This looks like remappings wile using solc. Maybe this is what is happening under the hood.
+    - Step 4: Create a simple ERC721 contract in the `src` folder. 
+    - Step 5: Now, you can use OZ as you would in any hardhat project.
+
+
+Thanks!
