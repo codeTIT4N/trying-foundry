@@ -1,15 +1,15 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.13;
+pragma solidity 0.8.18;
 
 import "forge-std/Script.sol";
-import "src/Greetings.sol";
+import "src/FoundryNFT.sol";
 
-contract GreetingsScript is Script {
+contract FoundryNFTScript is Script {
     function setUp() public {}
 
     function run() public {
         //  this will deploy to the EVM
         vm.broadcast();
-        new Greetings("Hello Foundry!");
+        new FoundryNFT();
     }
 }

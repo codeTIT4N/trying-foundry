@@ -2,17 +2,17 @@
 pragma solidity ^0.8.13;
 
 import "forge-std/Test.sol";
-import "../src/ERC721.sol";
+import "../src/FoundryNFT.sol";
 
 // To run only these test: `forge test --match-contract FoundryToken`
-contract FoundryTokenTest is Test {
-    FoundryToken contract721;
+contract FoundryNFTTest is Test {
+    FoundryNFT contract721;
     //creating new users for testing
     address ankit = address(0x1);
     address bhuvan = address(0x2);
 
     function setUp() public {
-        contract721 = new FoundryToken();
+        contract721 = new FoundryNFT();
     }
 
     // simple mint test
